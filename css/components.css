@@ -361,8 +361,63 @@
    -------------------------------------------------------------------------- */
 .dishes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
   gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.dishes-grid .dish-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Horizontal scroll track with center snap */
+.dishes-carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dishes-scroll-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  width: 100%;
+  transition: all var(--transition-normal);
+}
+
+.carousel-nav-btn {
+  display: none;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-surface-elevated);
+  border: 1.5px solid var(--border-red);
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-nav-btn:hover {
+  background: var(--primary-red);
+  box-shadow: 0 0 20px var(--primary-red-glow);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-prev-btn {
+  left: -15px;
+}
+
+.carousel-next-btn {
+  right: -15px;
 }
 
 .dish-card {
@@ -716,18 +771,24 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(8px);
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-normal);
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
 }
 
 .modal-overlay.active {
@@ -741,12 +802,30 @@
   border-radius: var(--radius-lg);
   max-width: 600px;
   width: 100%;
-  max-height: 90vh;
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   position: relative;
   box-shadow: var(--shadow-lg), 0 0 35px var(--primary-red-glow);
   transform: scale(0.92);
   transition: transform var(--transition-normal);
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-red) rgba(255, 255, 255, 0.05);
+}
+
+.modal-container::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-full);
+}
+.modal-container::-webkit-scrollbar-thumb {
+  background: var(--primary-red);
+  border-radius: var(--radius-full);
 }
 
 .modal-overlay.active .modal-container {

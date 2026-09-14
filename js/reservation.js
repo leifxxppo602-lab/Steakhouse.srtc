@@ -180,5 +180,8 @@ function showBookingVoucher(data) {
   `;
 
   modal.classList.add('active');
+  modal.scrollTop = 0;
+  const vCont = modal.querySelector('.modal-container');
+  if (vCont) vCont.scrollTop = 0;
   document.body.style.overflow = 'hidden';
 }

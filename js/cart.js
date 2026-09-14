@@ -249,6 +249,9 @@ class KaguraCart {
     if (modalTotal) modalTotal.textContent = `฿${calc.total.toLocaleString()}`;
 
     modal.classList.add('active');
+    modal.scrollTop = 0;
+    const cont = modal.querySelector('.modal-container');
+    if (cont) cont.scrollTop = 0;
     document.body.style.overflow = 'hidden';
   }
 
@@ -354,6 +357,10 @@ class KaguraCart {
     `;
 
     receiptModal.classList.add('active');
+    receiptModal.scrollTop = 0;
+    const rCont = receiptModal.querySelector('.modal-container');
+    if (rCont) rCont.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
   }
 }
 

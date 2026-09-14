@@ -55,23 +55,6 @@ const MENU_DATA = [
     isFeatured: true
   },
   {
-    id: "kagura-lobster-tail",
-    name: "Grilled Boston Lobster with Garlic Herb",
-    nameTh: "ล็อบสเตอร์บอสตันย่างเนยกระเทียมสมุนไพร",
-    category: "seafood",
-    price: 1890,
-    rating: 4.7,
-    reviewsCount: 76,
-    image: "https://images.unsplash.com/photo-1559737558-245cb3114d59?auto=format&fit=crop&w=800&q=80",
-    description: "ล็อบสเตอร์เป็นสด ย่างไฟเปลวถ่านอ่อน ทาเนยเนยกระเทียมโรสแมรี่ เสิร์ฟกับเลมอนเผาและซอสบียาร์เนสส้มยูซุ",
-    ingredients: "Live Boston Lobster, Herb Clarified Butter, Yuzu Béarnaise, Charred Lemon",
-    calories: "430 kcal",
-    prepTime: "18 นาที",
-    spiceLevel: 0,
-    tags: ["Recommended", "Seafood"],
-    isFeatured: true
-  },
-  {
     id: "kagura-salmon-tartare",
     name: "Norwegian Smoked Salmon Tartare",
     nameTh: "ทาร์ทาร์แซลมอนรมควัน นอร์เวย์",

@@ -7,7 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initActiveNavLink();
   initModalTriggers();
+  initPhoneInputs();
 });
+
+/* --------------------------------------------------------------------------
+   Phone Number Input Filter (Digits Only)
+   -------------------------------------------------------------------------- */
+function initPhoneInputs() {
+  document.addEventListener('input', (e) => {
+    if (e.target && (e.target.type === 'tel' || (e.target.id && e.target.id.includes('phone')) || e.target.name === 'phone')) {
+      e.target.value = e.target.value.replace(/[^0-9]/g, '');
+    }
+  });
+}
+
 
 /* --------------------------------------------------------------------------
    Sticky Navbar on Scroll

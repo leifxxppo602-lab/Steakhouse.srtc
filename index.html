@@ -149,8 +149,22 @@
         </p>
       </div>
 
-      <div class="dishes-grid" id="featured-dishes-grid">
-        <!-- Injected via JavaScript from MENU_DATA -->
+      <div class="dishes-carousel-wrapper">
+        <button class="carousel-nav-btn carousel-prev-btn" id="featured-prev-btn" aria-label="เลื่อนไปทางซ้าย">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <div class="dishes-scroll-track" id="featured-dishes-grid">
+          <!-- Injected via JavaScript from MENU_DATA -->
+        </div>
+
+        <button class="carousel-nav-btn carousel-next-btn" id="featured-next-btn" aria-label="เลื่อนไปทางขวา">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
 
       <div style="text-align: center; margin-top: 3.5rem;">
@@ -342,7 +356,7 @@
 
           <div class="form-group">
             <label class="form-label" for="checkout-phone">เบอร์โทรศัพท์ติดต่อ *</label>
-            <input type="tel" id="checkout-phone" class="form-control" placeholder="08x-xxx-xxxx" required>
+            <input type="tel" id="checkout-phone" class="form-control" placeholder="08xxxxxxxx" inputmode="numeric" pattern="[0-9]*" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
           </div>
 
           <div class="form-group">
@@ -441,6 +455,18 @@
           </div>
         </div>
       `).join('');
+
+      // Carousel navigation buttons
+      const prevBtn = document.getElementById('featured-prev-btn');
+      const nextBtn = document.getElementById('featured-next-btn');
+      if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          featuredContainer.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          featuredContainer.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+      }
     });
   </script>
 </body>

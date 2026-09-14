@@ -23,6 +23,7 @@ function initMenu() {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentCategory = btn.dataset.category;
+      btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       renderMenu();
     });
   });
@@ -125,58 +126,58 @@ window.openDishModal = function(dishId) {
 
   container.innerHTML = `
     <div style="position: relative;">
-      <img src="${dish.image}" alt="${dish.name}" style="width: 100%; height: 280px; object-fit: cover; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
-      <div style="position: absolute; bottom: 1rem; left: 1.5rem; display: flex; gap: 0.4rem;">
+      <img src="${dish.image}" alt="${dish.name}" style="width: 100%; height: clamp(170px, 26vh, 250px); object-fit: cover; border-radius: var(--radius-lg) var(--radius-lg) 0 0;">
+      <div style="position: absolute; bottom: 0.8rem; left: 1.2rem; display: flex; gap: 0.4rem; flex-wrap: wrap;">
         ${dish.tags.map(t => `<span class="badge badge-fire">${t}</span>`).join('')}
       </div>
     </div>
-    <div style="padding: 1.8rem;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+    <div style="padding: 1.4rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; gap: 0.8rem;">
         <div>
-          <h2 style="font-size: 1.6rem; color: #fff; margin-bottom: 0.2rem;">${dish.nameTh}</h2>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">${dish.name}</p>
+          <h2 style="font-size: clamp(1.2rem, 3.5vw, 1.5rem); color: #fff; margin-bottom: 0.2rem; line-height: 1.25;">${dish.nameTh}</h2>
+          <p style="color: var(--text-muted); font-size: 0.88rem;">${dish.name}</p>
         </div>
-        <div style="font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--primary-red);">
+        <div style="font-family: var(--font-serif); font-size: clamp(1.4rem, 4vw, 1.7rem); font-weight: 700; color: var(--primary-red); white-space: nowrap;">
           ฿${dish.price.toLocaleString()}
         </div>
       </div>
 
-      <p style="font-size: 0.98rem; line-height: 1.7; color: var(--text-secondary); margin: 1.2rem 0;">
+      <p style="font-size: 0.92rem; line-height: 1.65; color: var(--text-secondary); margin: 0.8rem 0 1.2rem 0;">
         ${dish.description}
       </p>
 
-      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1.5rem;">
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; font-size: 0.9rem;">
+      <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 1.2rem;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; font-size: 0.88rem;">
           <div>
-            <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">ความเผ็ด:</span>
+            <span style="color: var(--text-muted); display: block; font-size: 0.78rem;">ความเผ็ด:</span>
             <span>${spiceIcons}</span>
           </div>
           <div>
-            <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">เวลาปรุง:</span>
+            <span style="color: var(--text-muted); display: block; font-size: 0.78rem;">เวลาปรุง:</span>
             <span>${dish.prepTime}</span>
           </div>
           <div>
-            <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">พลังงาน:</span>
+            <span style="color: var(--text-muted); display: block; font-size: 0.78rem;">พลังงาน:</span>
             <span>${dish.calories}</span>
           </div>
           <div>
-            <span style="color: var(--text-muted); display: block; font-size: 0.8rem;">คะแนนความพึงพอใจ:</span>
+            <span style="color: var(--text-muted); display: block; font-size: 0.78rem;">คะแนนความพึงพอใจ:</span>
             <span style="color: var(--gold-accent);">★ ${dish.rating} (${dish.reviewsCount} รีวิว)</span>
           </div>
         </div>
-        <div style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem;">
+        <div style="margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.82rem;">
           <span style="color: var(--text-muted);">วัตถุดิบสำคัญ:</span>
           <span style="color: var(--text-secondary);">${dish.ingredients}</span>
         </div>
       </div>
 
-      <div style="display: flex; gap: 1rem; align-items: center;">
+      <div style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
         <div class="cart-qty-control" style="padding: 0.2rem 0.5rem;">
           <button class="qty-btn" onclick="const q = document.getElementById('modal-dish-qty'); if(+q.value > 1) q.value = +q.value - 1;">-</button>
           <input type="number" id="modal-dish-qty" value="1" min="1" max="99" style="width: 40px; background: transparent; border: none; color: #fff; text-align: center; font-weight: 700;">
           <button class="qty-btn" onclick="const q = document.getElementById('modal-dish-qty'); q.value = +q.value + 1;">+</button>
         </div>
-        <button class="btn btn-primary" style="flex-grow: 1;" onclick="
+        <button class="btn btn-primary" style="flex-grow: 1; min-width: 180px;" onclick="
           const qty = parseInt(document.getElementById('modal-dish-qty').value) || 1;
           cartApp.addItem('${dish.id}', qty);
           document.getElementById('dish-detail-modal').classList.remove('active');
@@ -189,5 +190,8 @@ window.openDishModal = function(dishId) {
   `;
 
   modal.classList.add('active');
+  const modalContainer = modal.querySelector('.modal-container');
+  if (modalContainer) modalContainer.scrollTop = 0;
+  modal.scrollTop = 0;
   document.body.style.overflow = 'hidden';
 };
