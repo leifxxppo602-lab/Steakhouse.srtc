@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ติดต่อเรา & ที่ตั้งร้าน | KAGURA Steakhouse & Fine Dining</title>
+  <meta name="description" content="ติดต่อ KAGURA Steakhouse สอบถามข้อมูล ที่ตั้งใจกลางสุขุมวิท 49 พร้อมที่จอดรถ Valet Parking และคำถามที่พบบ่อย (FAQ)">
+
+  <!-- Core & Component CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-fade-in">
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+       ========================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="KAGURA Home">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </span>
+        <span>KAGURA</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">หน้าแรก</a></li>
+          <li><a href="menu.html" class="nav-link">เมนูอาหาร</a></li>
+          <li><a href="reservation.html" class="nav-link">สำรองโต๊ะ</a></li>
+          <li><a href="about.html" class="nav-link">เรื่องราวของเรา</a></li>
+          <li><a href="contact.html" class="nav-link active">ติดต่อเรา</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-trigger-btn" id="cart-trigger-btn" aria-label="ดูตะกร้าสั่งอาหาร">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-badge" id="cart-badge-count" style="display: none;">0</span>
+        </button>
+        <a href="reservation.html" class="btn btn-primary btn-sm">สำรองที่นั่ง</a>
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="เปิดเมนูมือถือ">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-logo" style="font-size: 1.3rem;">
+        <span class="logo-icon" style="width: 30px; height: 30px;">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width: 15px; height: 15px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </span>
+        <span>KAGURA</span>
+      </div>
+      <button class="cart-close-btn" id="mobile-nav-close" aria-label="ปิดเมนู">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">🏠 หน้าแรก</a></li>
+      <li><a href="menu.html" class="mobile-nav-link">🥩 เมนูอาหาร & สั่งออนไลน์</a></li>
+      <li><a href="reservation.html" class="mobile-nav-link">🍷 สำรองโต๊ะ VIP</a></li>
+      <li><a href="about.html" class="mobile-nav-link">👨‍🍳 เรื่องราว & เชฟ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link active">📍 ติดต่อเรา & แผนที่</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary" style="width: 100%;">จองโต๊ะทันที</a>
+    </div>
+  </div>
+  <div class="cart-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- ==========================================
+       PAGE BANNER
+       ========================================== -->
+  <section style="padding: 8rem 0 3.5rem 0; background: linear-gradient(to bottom, #111319, var(--bg-main)); text-align: center;">
+    <div class="container">
+      <span class="section-subtitle">GET IN TOUCH</span>
+      <h1 style="margin-bottom: 1rem;">ติดต่อเรา & ที่ตั้งร้าน</h1>
+      <p style="max-width: 620px; margin: 0 auto; color: var(--text-secondary);">
+        หากท่านมีข้อสงสัย ต้องการจัดงานเลี้ยงส่วนตัว (Private Event) หรือสอบถามเส้นทาง ทีมงานของเราพร้อมให้บริการอย่างเต็มที่
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT GRID SECTION
+       ========================================== -->
+  <section class="section" style="padding-top: 1rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;" class="booking-grid">
+        
+        <!-- Left: Contact Details & Info Cards -->
+        <div>
+          <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #fff;">
+            พร้อมต้อนรับท่านสู่ <br>
+            <span class="text-gradient">KAGURA Dining Experience</span>
+          </h2>
+
+          <div style="display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem;">
+            
+            <div style="display: flex; gap: 1.2rem; background: var(--bg-surface); padding: 1.3rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary-red-subtle); display: flex; align-items: center; justify-content: center; color: var(--primary-red); flex-shrink: 0;">
+                📍
+              </div>
+              <div>
+                <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">ที่ตั้งร้าน</h4>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                  เลขที่ 88 ซอยสุขุมวิท 49 แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพฯ 10110 (ใกล้ BTS ทองหล่อ / พร้อมพงษ์)
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.2rem; background: var(--bg-surface); padding: 1.3rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary-red-subtle); display: flex; align-items: center; justify-content: center; color: var(--primary-red); flex-shrink: 0;">
+                📞
+              </div>
+              <div>
+                <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">โทรศัพท์ & LINE</h4>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                  โทร: 02-999-8888, 081-234-5678 <br>
+                  LINE Official: @kagurabkk (ตอบกลับภายใน 15 นาที)
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1.2rem; background: var(--bg-surface); padding: 1.3rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary-red-subtle); display: flex; align-items: center; justify-content: center; color: var(--primary-red); flex-shrink: 0;">
+                🚗
+              </div>
+              <div>
+                <h4 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">ที่จอดรถ (Valet Parking)</h4>
+                <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+                  มีบริการพนักงานรับจอดรถ Valet Parking ฟรี พร้อมระบบรักษาความปลอดภัย 24 ชม.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Stylized Dark Map Preview Card -->
+          <div style="background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); overflow: hidden;">
+            <div style="height: 200px; background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80') center/cover; position: relative;">
+              <div style="position: absolute; inset: 0; background: rgba(9, 10, 13, 0.65); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem;">
+                <div style="width: 50px; height: 50px; background: var(--primary-red); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.4rem; box-shadow: 0 0 20px var(--primary-red); margin-bottom: 0.6rem;">
+                  📍
+                </div>
+                <strong style="color: #fff; font-size: 1.1rem;">KAGURA Sukhumvit 49</strong>
+                <span style="font-size: 0.85rem; color: var(--text-secondary);">13.7314° N, 100.5752° E</span>
+              </div>
+            </div>
+            <div style="padding: 1rem 1.4rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.88rem; color: var(--text-muted);">เปิดนำทางด้วย Google Maps</span>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-outline btn-sm">เปิดแผนที่ ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div>
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.2rem; box-shadow: var(--shadow-md);">
+            <h3 style="color: #fff; margin-bottom: 0.5rem;">ส่งข้อความถึงเรา</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.8rem;">
+              กรอกแบบฟอร์มด้านล่างเพื่อส่งข้อความสอบถาม หรือแนะนำการบริการ
+            </p>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">ชื่อ - นามสกุล *</label>
+                <input type="text" id="contact-name" class="form-control" placeholder="คุณสมชาย ใจดี" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">เบอร์โทรศัพท์ *</label>
+                  <input type="tel" id="contact-phone" class="form-control" placeholder="08x-xxx-xxxx" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">อีเมล *</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="example@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">เรื่องที่ต้องการติดต่อ</label>
+                <select id="contact-subject" class="form-control">
+                  <option value="ทั่วไป">สอบถามข้อมูลทั่วไป</option>
+                  <option value="Private Event">จัดเลี้ยงส่วนตัว / เหมาฟลอร์ (Private Event)</option>
+                  <option value="Wine & Menu">สอบถามเกี่ยวกับเมนูและไวน์</option>
+                  <option value="Feedback">คำติชมและข้อเสนอแนะ</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">ข้อความของคุณ *</label>
+                <textarea id="contact-message" class="form-control" placeholder="พิมพ์ข้อความที่ต้องการแจ้งทางร้าน..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                ส่งข้อความ
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FAQ ACCORDION SECTION
+       ========================================== -->
+  <section class="section section-darker">
+    <div class="container" style="max-width: 820px;">
+      <div class="section-header">
+        <span class="section-subtitle">FAQ</span>
+        <h2 class="section-title">คำถามที่พบบ่อย</h2>
+        <p class="section-description">
+          รวมคำตอบสำหรับคำถามยอดนิยมจากผู้มาเยือน KAGURA
+        </p>
+      </div>
+
+      <div class="faq-list">
+        
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>ทางร้านมีที่จอดรถและบริการ Valet Parking หรือไม่?</span>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>
+              ทางร้านมีลานจอดรถส่วนตัวรองรับได้กว่า 50 คัน พร้อมบริการรับฝากจอดรถ (Valet Parking) ฟรีสำหรับลูกค้าทุกท่านตลอดช่วงเวลาเปิดทำการ
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>สามารถนำไวน์มาเองได้หรือไม่ และมีค่าเปิดขวดเท่าใด?</span>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>
+              ลูกค้านำไวน์มาเองได้ โดยมีค่าธรรมเนียมเปิดขวด (Corkage Fee) 1,000 บาทต่อขวดขนาดมาตรฐาน (750ml) และหากสั่งไวน์ของทางร้าน 1 ขวด ทางร้านยินดีฟรีค่าเปิดขวดสำหรับไวน์ที่นำมา 1 ขวดเช่นกัน
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>การแต่งกาย (Dress Code) ของห้องอาหารเป็นอย่างไร?</span>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>
+              เราส่งเสริมการแต่งกายสไตล์ Smart Casual หรือชุดสุภาพ เพื่อรักษาบรรยากาศอันรื่นรมย์ ขอความกรุณางดรองเท้าแตะแบบคีบและชุดออกกำลังกาย
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>มีตัวเลือกสำหรับผู้ที่ทานมังสวิรัติ หรือแพ้อาหารเฉพาะอย่างหรือไม่?</span>
+            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>
+              ทางร้านมีเมนูพาสต้าเส้นสดเห็ดทรัฟเฟิลดำ, สลัดออร์แกนิก, และของหวานมังสวิรัติ และสามารถแจ้งอาการแพ้อาหารล่วงหน้าตอนสำรองที่นั่งเพื่อให้ทีมเชฟปรับแต่งวัตถุดิบให้ปลอดภัยสำหรับท่านโดยเฉพาะ
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       GLOBAL FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </span>
+            <span>KAGURA</span>
+          </a>
+          <p>
+            สเต๊กเฮ้าส์ระดับพรีเมียม ถ่ายทอดศิลปะแห่งการปรุงเนื้อด้วยเปลวไฟ และวัตถุดิบชั้นเลิศในบรรยากาศ Modern Black-Red
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="TikTok">TT</a>
+            <a href="#" class="social-btn" aria-label="LINE Official">LN</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>แผนผังเว็บไซต์</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="menu.html">เมนูอาหาร</a></li>
+            <li><a href="reservation.html">สำรองโต๊ะ</a></li>
+            <li><a href="about.html">เรื่องราว & เชฟ</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>เวลาเปิดให้บริการ</h4>
+          <ul class="footer-links">
+            <li style="color: var(--text-secondary);">มื้อกลางวัน: 11:30 - 14:30 น.</li>
+            <li style="color: var(--text-secondary);">มื้อค่ำ: 17:30 - 23:00 น.</li>
+            <li style="color: var(--text-secondary);">ศุกร์ - เสาร์: 17:30 - 00:00 น.</li>
+            <li style="color: var(--primary-red); font-weight: 600;">เปิดบริการทุกวัน</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ติดต่อร้าน</h4>
+          <ul class="footer-links">
+            <li style="color: var(--text-secondary);">📞 02-999-8888</li>
+            <li style="color: var(--text-secondary);">📱 081-234-5678</li>
+            <li style="color: var(--text-secondary);">📍 สุขุมวิท 49, กรุงเทพมหานคร</li>
+            <li style="color: var(--text-secondary);">✉️ reserve@kagura-dining.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KAGURA Steakhouse & Fine Dining. All Rights Reserved.</p>
+        <p style="color: var(--primary-red);">Crafted with Flame & Passion</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Global Cart Drawer & Modals -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-header">
+      <h3>
+        <span style="color: var(--primary-red);">🛒</span>
+        <span>ตะกร้าสั่งอาหาร</span>
+      </h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="ปิดตะกร้า">✕</button>
+    </div>
+    <div class="cart-body" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>ค่าอาหารรวม (Subtotal)</span>
+        <span id="cart-subtotal-val">฿0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>ค่าบริการ Service Charge (10%)</span>
+        <span id="cart-service-val">฿0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>ภาษีมูลค่าเพิ่ม VAT (7%)</span>
+        <span id="cart-vat-val">฿0</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>ยอดรวมสุทธิ</span>
+        <span id="cart-total-val">฿0</span>
+      </div>
+      <button class="btn btn-primary" id="cart-checkout-btn" style="width: 100%;" disabled>ดำเนินการชำระเงิน</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="document.getElementById('checkout-modal').classList.remove('active'); document.body.style.overflow = '';">✕</button>
+      <div style="padding: 1.8rem;">
+        <h3 style="color: #fff; margin-bottom: 0.3rem;">ยืนยันคำสั่งซื้อ & ชำระเงิน</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          ยอดชำระ: <strong id="modal-checkout-total" style="color: var(--primary-red); font-size: 1.2rem;">฿0</strong>
+        </p>
+        <form id="checkout-form" onsubmit="cartApp.processOrder(event)">
+          <div class="form-group">
+            <label class="form-label" for="checkout-name">ชื่อผู้สั่ง / ลูกค้า *</label>
+            <input type="text" id="checkout-name" class="form-control" placeholder="เช่น คุณสมศักดิ์" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="checkout-phone">เบอร์โทรศัพท์ติดต่อ *</label>
+            <input type="tel" id="checkout-phone" class="form-control" placeholder="08x-xxx-xxxx" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="checkout-type">รูปแบบการสั่ง *</label>
+            <select id="checkout-type" class="form-control">
+              <option value="Dine-in (รับประทานที่ร้าน / สั่งล่วงหน้า)">Dine-in (รับประทานที่ร้าน / สั่งล่วงหน้า)</option>
+              <option value="Takeaway (รับกลับบ้าน)">Takeaway (รับกลับบ้าน)</option>
+              <option value="Delivery Express (จัดส่งด่วน)">Delivery Express (จัดส่งด่วน)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">วิธีชำระเงิน *</label>
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem;">
+              <label style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-elevated); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid var(--border-subtle);">
+                <input type="radio" name="payment_method" value="QR PromptPay" checked>
+                <span>📲 สแกน QR Code PromptPay (แนะนำ)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-elevated); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid var(--border-subtle);">
+                <input type="radio" name="payment_method" value="Credit / Debit Card">
+                <span>💳 บัตรเครดิต / เดบิต (Visa, Mastercard, JCB)</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">ยืนยันคำสั่งซื้อ</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="receipt-modal">
+    <div class="modal-container">
+      <div id="receipt-content" style="padding: 1.8rem;"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

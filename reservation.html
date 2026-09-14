@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สำรองโต๊ะ VIP & โซนที่นั่ง | KAGURA Steakhouse & Fine Dining</title>
+  <meta name="description" content="จองโต๊ะอาหารล่วงหน้า เลือกโซนที่นั่ง The Crimson VIP Lounge, Chef's Counter หรือ Starry Terrace สะดวก รวดเร็ว พร้อมรับรหัสยืนยันทันที">
+
+  <!-- Core & Component CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="page-fade-in">
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+       ========================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="KAGURA Home">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </span>
+        <span>KAGURA</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">หน้าแรก</a></li>
+          <li><a href="menu.html" class="nav-link">เมนูอาหาร</a></li>
+          <li><a href="reservation.html" class="nav-link active">สำรองโต๊ะ</a></li>
+          <li><a href="about.html" class="nav-link">เรื่องราวของเรา</a></li>
+          <li><a href="contact.html" class="nav-link">ติดต่อเรา</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="cart-trigger-btn" id="cart-trigger-btn" aria-label="ดูตะกร้าสั่งอาหาร">
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-badge" id="cart-badge-count" style="display: none;">0</span>
+        </button>
+        <a href="reservation.html" class="btn btn-primary btn-sm">สำรองที่นั่ง</a>
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="เปิดเมนูมือถือ">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-logo" style="font-size: 1.3rem;">
+        <span class="logo-icon" style="width: 30px; height: 30px;">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width: 15px; height: 15px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </span>
+        <span>KAGURA</span>
+      </div>
+      <button class="cart-close-btn" id="mobile-nav-close" aria-label="ปิดเมนู">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">🏠 หน้าแรก</a></li>
+      <li><a href="menu.html" class="mobile-nav-link">🥩 เมนูอาหาร & สั่งออนไลน์</a></li>
+      <li><a href="reservation.html" class="mobile-nav-link active">🍷 สำรองโต๊ะ VIP</a></li>
+      <li><a href="about.html" class="mobile-nav-link">👨‍🍳 เรื่องราว & เชฟ</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">📍 ติดต่อเรา & แผนที่</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary" style="width: 100%;">จองโต๊ะทันที</a>
+    </div>
+  </div>
+  <div class="cart-overlay" id="mobile-nav-overlay"></div>
+
+  <!-- ==========================================
+       PAGE BANNER
+       ========================================== -->
+  <section style="padding: 8rem 0 3rem 0; background: linear-gradient(to bottom, #111319, var(--bg-main)); text-align: center;">
+    <div class="container">
+      <span class="section-subtitle">TABLE RESERVATION</span>
+      <h1 style="margin-bottom: 1rem;">สำรองโต๊ะรับประทานอาหาร</h1>
+      <p style="max-width: 620px; margin: 0 auto; color: var(--text-secondary);">
+        เพื่อมอบประสบการณ์การรับประทานอาหารที่ดีที่สุดสำหรับคุณและแขกคนสำคัญ โปรดเลือกโซนที่นั่งและระบุรายละเอียดการจองล่วงหน้า
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       RESERVATION MAIN SECTION
+       ========================================== -->
+  <section class="section" style="padding-top: 1.5rem;">
+    <div class="container">
+      <div class="booking-grid">
+        
+        <!-- Left Column: Zone Selection -->
+        <div>
+          <h3 style="color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem;">
+            <span style="color: var(--primary-red); font-size: 1.2rem;">01.</span>
+            <span>เลือกโซนที่นั่งที่ต้องการ</span>
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            คลิกเลือกโซนบรรยากาศที่คุณต้องการสัมผัสในค่ำคืนนี้
+          </p>
+
+          <div class="table-zones-grid" id="zones-selection-container">
+            <!-- Injected via js/reservation.js -->
+          </div>
+
+          <!-- Policy Box -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.4rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            <strong style="color: var(--text-primary); display: block; margin-bottom: 0.5rem;">📌 นโยบายการสำรองที่นั่ง</strong>
+            <p>• โต๊ะจะถูกสำรองไว้เป็นเวลา 20 นาที นับจากเวลานัดหมาย หากเดินทางล่าช้าโปรดแจ้งพนักงาน</p>
+            <p>• สำหรับห้อง VIP กรุณาจองล่วงหน้าอย่างน้อย 24 ชั่วโมง</p>
+            <p>• หากต้องการจัดตกแต่งพิเศษสำหรับวันเกิด หรือวันครบรอบ โปรดระบุในช่องหมายเหตุเพิ่มเติม</p>
+          </div>
+        </div>
+
+        <!-- Right Column: Booking Details Form -->
+        <div>
+          <div style="background: var(--bg-surface); border: 1.5px solid var(--border-red); border-radius: var(--radius-lg); padding: 2.2rem; box-shadow: var(--shadow-lg), 0 0 25px rgba(255, 42, 75, 0.15);">
+            <h3 style="color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem;">
+              <span style="color: var(--primary-red); font-size: 1.2rem;">02.</span>
+              <span>ระบุข้อมูลการจอง</span>
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.8rem;">
+              กรอกข้อมูลเพื่อสร้างบัตรสำรองที่นั่ง VIP Pass
+            </p>
+
+            <form id="reservation-form">
+              <input type="hidden" id="res-zone-input" value="chef-counter">
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="res-date">วันที่ต้องการจอง *</label>
+                  <input type="date" id="res-date" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res-time">ช่วงเวลา *</label>
+                  <select id="res-time" class="form-control" required>
+                    <option value="11:30">11:30 น. (Lunch)</option>
+                    <option value="12:00">12:00 น. (Lunch)</option>
+                    <option value="12:30">12:30 น. (Lunch)</option>
+                    <option value="13:00">13:00 น. (Lunch)</option>
+                    <option value="17:30">17:30 น. (Dinner)</option>
+                    <option value="18:00">18:00 น. (Dinner)</option>
+                    <option value="18:30" selected>18:30 น. (Dinner)</option>
+                    <option value="19:00">19:00 น. (Dinner)</option>
+                    <option value="19:30">19:30 น. (Dinner)</option>
+                    <option value="20:00">20:00 น. (Dinner)</option>
+                    <option value="20:30">20:30 น. (Dinner)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="res-guests">จำนวนผู้ร่วมโต๊ะ *</label>
+                  <select id="res-guests" class="form-control" required>
+                    <option value="1">1 ท่าน</option>
+                    <option value="2" selected>2 ท่าน (คู่รัก/เพื่อนสนิท)</option>
+                    <option value="3">3 ท่าน</option>
+                    <option value="4">4 ท่าน (ครอบครัว/กลุ่มเพื่อน)</option>
+                    <option value="5">5 ท่าน</option>
+                    <option value="6">6 ท่าน</option>
+                    <option value="8">8 ท่าน</option>
+                    <option value="10">10 ท่านขึ้นไป (VIP)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res-occasion">โอกาสพิเศษ</label>
+                  <select id="res-occasion" class="form-control">
+                    <option value="มื้อค่ำทั่วไป">มื้อค่ำทั่วไป (Casual Dining)</option>
+                    <option value="วันเกิด (Birthday Celebration)">วันเกิด (Birthday Celebration)</option>
+                    <option value="วันครบรอบ (Anniversary)">วันครบรอบ (Anniversary)</option>
+                    <option value="เลี้ยงรับรองธุรกิจ (Business Dinner)">เลี้ยงรับรองธุรกิจ (Business Dinner)</option>
+                    <option value="เดตโรแมนติก (Romantic Date)">เดตโรแมนติก (Romantic Date)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-name">ชื่อผู้จอง (คุณ) *</label>
+                <input type="text" id="res-name" class="form-control" placeholder="เช่น คุณวรพงษ์ สุวรรณสิทธิ์" required>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                  <label class="form-label" for="res-phone">เบอร์โทรศัพท์ติดต่อ *</label>
+                  <input type="tel" id="res-phone" class="form-control" placeholder="081-xxx-xxxx" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="res-email">อีเมล (สำหรับส่งบัตรยืนยัน)</label>
+                  <input type="email" id="res-email" class="form-control" placeholder="yourname@gmail.com">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="res-notes">ข้อกำหนดพิเศษ / แพ้อาหาร</label>
+                <textarea id="res-notes" class="form-control" placeholder="เช่น แพ้อาหารทะเล, ต้องการเก้าอี้เด็ก, จัดเตรียมเค้กวันเกิด..." style="min-height: 80px;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                ยืนยันการสำรองโต๊ะทันที
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONFIRMATION VOUCHER MODAL
+       ========================================== -->
+  <div class="modal-overlay" id="reservation-voucher-modal">
+    <div class="modal-container" style="max-width: 550px;">
+      <button class="modal-close-btn" onclick="document.getElementById('reservation-voucher-modal').classList.remove('active'); document.body.style.overflow = '';">✕</button>
+      <div id="voucher-content">
+        <!-- Injected via js/reservation.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       GLOBAL SHOPPING CART FLYOUT DRAWER
+       ========================================== -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping Cart">
+    <div class="cart-header">
+      <h3>
+        <span style="color: var(--primary-red);">🛒</span>
+        <span>ตะกร้าสั่งอาหาร</span>
+      </h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="ปิดตะกร้า">✕</button>
+    </div>
+
+    <div class="cart-body" id="cart-items-container"></div>
+
+    <div class="cart-footer">
+      <div class="cart-summary-line">
+        <span>ค่าอาหารรวม (Subtotal)</span>
+        <span id="cart-subtotal-val">฿0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>ค่าบริการ Service Charge (10%)</span>
+        <span id="cart-service-val">฿0</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>ภาษีมูลค่าเพิ่ม VAT (7%)</span>
+        <span id="cart-vat-val">฿0</span>
+      </div>
+      <div class="cart-summary-total">
+        <span>ยอดรวมสุทธิ</span>
+        <span id="cart-total-val">฿0</span>
+      </div>
+      <button class="btn btn-primary" id="cart-checkout-btn" style="width: 100%;" disabled>
+        ดำเนินการชำระเงิน (Checkout)
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================
+       CHECKOUT PAYMENT MODAL & RECEIPT
+       ========================================== -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="document.getElementById('checkout-modal').classList.remove('active'); document.body.style.overflow = '';">✕</button>
+      <div style="padding: 1.8rem;">
+        <h3 style="color: #fff; margin-bottom: 0.3rem;">ยืนยันคำสั่งซื้อ & ชำระเงิน</h3>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+          ยอดชำระ: <strong id="modal-checkout-total" style="color: var(--primary-red); font-size: 1.2rem;">฿0</strong>
+        </p>
+
+        <form id="checkout-form" onsubmit="cartApp.processOrder(event)">
+          <div class="form-group">
+            <label class="form-label" for="checkout-name">ชื่อผู้สั่ง / ลูกค้า *</label>
+            <input type="text" id="checkout-name" class="form-control" placeholder="เช่น คุณสมศักดิ์" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkout-phone">เบอร์โทรศัพท์ติดต่อ *</label>
+            <input type="tel" id="checkout-phone" class="form-control" placeholder="08x-xxx-xxxx" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="checkout-type">รูปแบบการสั่ง *</label>
+            <select id="checkout-type" class="form-control">
+              <option value="Dine-in (รับประทานที่ร้าน / สั่งล่วงหน้า)">Dine-in (รับประทานที่ร้าน / สั่งล่วงหน้า)</option>
+              <option value="Takeaway (รับกลับบ้าน)">Takeaway (รับกลับบ้าน)</option>
+              <option value="Delivery Express (จัดส่งด่วน)">Delivery Express (จัดส่งด่วน)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">วิธีชำระเงิน *</label>
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem;">
+              <label style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-elevated); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid var(--border-subtle);">
+                <input type="radio" name="payment_method" value="QR PromptPay" checked>
+                <span>📲 สแกน QR Code PromptPay (แนะนำ)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-elevated); padding: 0.8rem; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid var(--border-subtle);">
+                <input type="radio" name="payment_method" value="Credit / Debit Card">
+                <span>💳 บัตรเครดิต / เดบิต (Visa, Mastercard, JCB)</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            ยืนยันคำสั่งซื้อ
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="receipt-modal">
+    <div class="modal-container">
+      <div id="receipt-content" style="padding: 1.8rem;"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="logo-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            </span>
+            <span>KAGURA</span>
+          </a>
+          <p>
+            สเต๊กเฮ้าส์ระดับพรีเมียม ถ่ายทอดศิลปะแห่งการปรุงเนื้อด้วยเปลวไฟ และวัตถุดิบชั้นเลิศในบรรยากาศ Modern Black-Red
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+            <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+            <a href="#" class="social-btn" aria-label="TikTok">TT</a>
+            <a href="#" class="social-btn" aria-label="LINE Official">LN</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>แผนผังเว็บไซต์</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="menu.html">เมนูอาหาร</a></li>
+            <li><a href="reservation.html">สำรองโต๊ะ</a></li>
+            <li><a href="about.html">เรื่องราว & เชฟ</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>เวลาเปิดให้บริการ</h4>
+          <ul class="footer-links">
+            <li style="color: var(--text-secondary);">มื้อกลางวัน: 11:30 - 14:30 น.</li>
+            <li style="color: var(--text-secondary);">มื้อค่ำ: 17:30 - 23:00 น.</li>
+            <li style="color: var(--text-secondary);">ศุกร์ - เสาร์: 17:30 - 00:00 น.</li>
+            <li style="color: var(--primary-red); font-weight: 600;">เปิดบริการทุกวัน</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>ติดต่อร้าน</h4>
+          <ul class="footer-links">
+            <li style="color: var(--text-secondary);">📞 02-999-8888</li>
+            <li style="color: var(--text-secondary);">📱 081-234-5678</li>
+            <li style="color: var(--text-secondary);">📍 สุขุมวิท 49, กรุงเทพมหานคร</li>
+            <li style="color: var(--text-secondary);">✉️ reserve@kagura-dining.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KAGURA Steakhouse & Fine Dining. All Rights Reserved.</p>
+        <p style="color: var(--primary-red);">Crafted with Flame & Passion</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/reservation.js"></script>
+</body>
+</html>
